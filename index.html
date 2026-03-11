@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lokesh Manepalli | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0b1728;
+      --panel: rgba(255, 255, 255, 0.06);
+      --panel-strong: rgba(255, 255, 255, 0.1);
+      --text: #edf4ff;
+      --muted: #b8c7df;
+      --accent: #60a5fa;
+      --accent-2: #22d3ee;
+      --border: rgba(255, 255, 255, 0.12);
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+      --radius: 22px;
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      line-height: 1.7;
+      background:
+        radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(96, 165, 250, 0.18), transparent 24%),
+        linear-gradient(180deg, #050c16 0%, #091423 45%, #07111f 100%);
+      color: var(--text);
+    }
+
+    a {
+      color: var(--accent-2);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background: rgba(7, 17, 31, 0.7);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      color: white;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      gap: 18px;
+    }
+
+    nav h1 {
+      font-size: 1.25rem;
+      letter-spacing: 0.4px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav ul li a {
+      color: #d8e7ff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: 0.25s ease;
+    }
+
+    nav ul li a:hover {
+      color: var(--accent-2);
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 92px 20px 55px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .hero-text h2 {
+      font-size: 3.2rem;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .hero-text h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #8ddcff;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 1.06rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+      max-width: 680px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #04111f;
+      box-shadow: 0 12px 30px rgba(34, 211, 238, 0.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      text-decoration: none;
+      box-shadow: 0 14px 36px rgba(34, 211, 238, 0.3);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.03);
+      color: #eef6ff;
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    .hero-card,
+    .card,
+    .publication-item,
+    .timeline-item {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .photo-card {
+      min-height: 370px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .photo-placeholder {
+      color: var(--muted);
+      font-size: 0.98rem;
+      max-width: 260px;
+    }
+
+    .hero-card h4 {
+      margin-bottom: 12px;
+      color: #ffffff;
+      font-size: 1.08rem;
+    }
+
+    .hero-card ul {
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 20px 42px;
+    }
+
+    .section-title {
+      font-size: 2.1rem;
+      color: #ffffff;
+      margin-bottom: 20px;
+      letter-spacing: 0.2px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .card h3,
+    .publication-item h3,
+    .timeline-item h3 {
+      margin-bottom: 10px;
+      color: #ffffff;
+      line-height: 1.35;
+    }
+
+    .card p,
+    .publication-item p,
+    .timeline-item p {
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(96, 165, 250, 0.14);
+      color: #c8ecff;
+      border: 1px solid rgba(96, 165, 250, 0.24);
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      margin-right: 8px;
+      margin-top: 8px;
+    }
+
+    .publication-meta,
+    .timeline-meta {
+      font-size: 0.94rem;
+      color: #7dd3fc;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: #dceafe;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    footer {
+      background: rgba(4, 9, 18, 0.82);
+      color: #d6e6ff;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 34px;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--accent-2);
+      text-decoration: none;
+    }
+
+    @media (max-width: 920px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-direction: column;
+      }
+
+      nav ul {
+        justify-content: center;
+      }
+
+      .hero-text h2 {
+        font-size: 2.4rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero {
+        padding-top: 72px;
+      }
+
+      .hero-text h2 {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Lokesh Manepalli</h1>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#conferences">Conferences</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#references">Reference</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Hi, I’m Lokesh Manepalli</h2>
+      <h3>Undergraduate AI Researcher | Deep Learning | NLP | Renewable Energy Systems</h3>
+      <p>
+        Developing intelligent, systems-level AI solutions to solve real-world challenges in human-centered computing and sustainable energy. Incoming Research Intern at ARCI and First-Author published at IIT Patna.
+      </p>
+      <div class="btn-group">
+        <a href="#publications" class="btn btn-primary">View Publications</a>
+        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="hero-side">
+      <div class="photo-card">
+        <div class="photo-placeholder">
+          Add your professional suit photo here.<br><br>
+          Replace this block later with an &lt;img&gt; tag after uploading your image file to the repository.
+        </div>
+      </div>
+
+      <div class="hero-card">
+      <h4>Current Highlights</h4>
+      <ul>
+        <li>Incoming Summer Research Intern at ARCI</li>
+        <li>First-author research presented at IIT Patna Research Conference ICADCA (Dec 2025)</li>
+        <li>Working across AI for mental health, NLP, explainable AI, and renewable energy systems</li>
+        <li>Building end-to-end, systems-level research architectures for real-world impact</li>
+      </ul>
+    </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="card">
+      <p>
+        I am an undergraduate researcher in the Honors Through Research (HTR) Program at Koneru Lakshmaiah Education Foundation (KLEF), specializing in Artificial Intelligence for Computational Intelligence.
+      </p>
+      <p>
+        My research philosophy is driven by a systems-level approach: I do not just train algorithms; I build end-to-end architectures that solve complex, real-world problems. Currently, my work spans two critical domains: Human-Computer Interaction (Mental Health) and the Water-Energy Nexus (Renewable Energy).
+      </p>
+      <p>
+        I am currently working under the mentorship of Dr. S. Shanmugan and am preparing to join the International Advanced Research Centre for Powder Metallurgy and New Materials (ARCI) as a Summer Research Intern. After completing my B.Tech, I intend to pursue a Fast-Track PhD in Germany to continue my work on AI-driven sustainable infrastructures.
+      </p>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2 class="section-title">Research Papers & Publications</h2>
+
+    <div class="publication-item">
+      <h3>Data and Privacy Risks in AI Chatbots</h3>
+      <div class="publication-meta">Independent Research</div>
+      <p>
+        Focused on cybersecurity and data ethics in conversational agents. This study analyzed over 2,300 data breaches across 15 chatbot platforms from 2004 to 2021 and found that 62% of platforms lacked strong encryption while 14% showed vulnerability to data poisoning.
+      </p>
+      <p>
+        This served as my foundational research project and directly informed the privacy, security, and data-anonymization framework later used in the MITRA chatbot architecture.
+      </p>
+      <span class="tag">Cybersecurity</span>
+      <span class="tag">AI Ethics</span>
+      <span class="tag">Chatbots</span>
+    </div>
+
+    <div class="publication-item">
+      <h3>MITRA: A Deep Learning–Based Emotion-Aware Conversational AI</h3>
+      <div class="publication-meta">First Author | Presented at IIT Patna Research Conference ICADCA (Dec 2025) | Under Review at International Journal of Artificial Intelligence in Education (Springer)</div>
+      <p>
+        Focused on mental health assessment and monitoring in educational environments. I developed a BiLSTM-CNN hybrid deep learning architecture that achieved 94.7% accuracy in detecting student emotional distress from informal text.
+      </p>
+      <p>
+        The system was built on a privacy-first design, utilizing end-to-end encryption to protect sensitive student data.
+      </p>
+      <span class="tag">Deep Learning</span>
+      <span class="tag">Mental Health AI</span>
+      <span class="tag">NLP</span>
+    </div>
+
+    <div class="publication-item">
+      <h3>AI-Based Solar Desalination for Green Hydrogen Production</h3>
+      <div class="publication-meta">Co-Authored with Dr. S. Shanmugan | Under Review – Renewable and Sustainable Energy Reviews (Elsevier)</div>
+      <p>
+        A comprehensive 70+ page architectural review bridging the Water-Energy-Hydrogen nexus. This work proposes a conceptual digital twin framework and an AI-driven adaptive control system for renewable desalination and green hydrogen generation.
+      </p>
+      <p>
+        The architecture integrates smart photothermal materials for continuous and optimized hydrogen production.
+      </p>
+      <span class="tag">Renewable Energy</span>
+      <span class="tag">Hydrogen</span>
+      <span class="tag">Solar Desalination</span>
+    </div>
+
+    <div class="publication-item">
+      <h3>Interpretable Text Message Spam Detection via a Novel Fuzzy–Bidirectional XGBoost Architecture</h3>
+      <div class="publication-meta">First Author | Manuscript Complete – Ready for Submission</div>
+      <p>
+        Focused on explainable AI, natural language processing, and cybersecurity. I engineered a tri-level feature representation system combining TF-IDF, BiLSTM-based semantic features, and fuzzy linguistic modeling.
+      </p>
+      <p>
+        Integrated with an XGBoost classifier and SHAP analysis, the model achieved 98.24% accuracy and 93.19% F1-score while maintaining strong human-readability and transparency.
+      </p>
+      <span class="tag">Explainable AI</span>
+      <span class="tag">Spam Detection</span>
+      <span class="tag">XGBoost</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Satellite Image Super-Resolution for Noisy Images</h3>
+        <p><strong>Role:</strong> Team Lead</p>
+        <p>Led the evaluation of five GAN architectures: Vanilla GAN, DCGAN, SRGAN, ESRGAN, and CycleGAN.</p>
+        <p>Achieved a 12% PSNR improvement using ESRGAN on datasets including EuroSAT, RESISC45, and SpaceNet.</p>
+      </div>
+      <div class="card">
+        <h3>Full-Stack Video Streaming Platform</h3>
+        <p><strong>Role:</strong> Team Lead</p>
+        <p>Built a scalable video streaming platform using React, Node.js, and MySQL.</p>
+        <p>Implemented adaptive bitrate streaming and secure authentication, optimized for low latency and reliable delivery for 30+ active users.</p>
+      </div>
+      <div class="card">
+        <h3>KLU Agent Chatbot (Gen-AI College Assistant)</h3>
+        <p><strong>Tech Stack:</strong> Python, Flask, Anthropic Claude API, HTML, CSS, JavaScript</p>
+        <p>Developed a full-stack, 24/7 AI-powered college assistant to automate student inquiries related to academics, tuition fees, bus routes, and campus logistics.</p>
+        <p>Implemented multi-turn conversational memory to maintain context across complex student queries and reduce manual administrative support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 class="section-title">Experience & Internship</h2>
+
+    <div class="timeline-item">
+      <h3>Summer Research Intern – ARCI</h3>
+      <div class="timeline-meta">Incoming</div>
+      <p>
+        Preparing to join the International Advanced Research Centre for Powder Metallurgy and New Materials (ARCI) for summer research, with a focus aligned toward advanced AI-driven and sustainability-oriented systems research.
+      </p>
+    </div>
+  </section>
+
+  <section id="conferences">
+    <h2 class="section-title">Conferences & Presentations</h2>
+
+    <div class="timeline-item">
+      <h3>IIT Patna Research Conference – ICADCA</h3>
+      <div class="timeline-meta">December 2025</div>
+      <p>
+        Presented first-author research work on MITRA, a deep learning–based emotion-aware conversational AI for student mental health assessment and monitoring.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills">
+      <span class="skill-pill">PyTorch</span>
+      <span class="skill-pill">TensorFlow</span>
+      <span class="skill-pill">CNNs</span>
+      <span class="skill-pill">LSTMs</span>
+      <span class="skill-pill">GANs</span>
+      <span class="skill-pill">Explainable AI (SHAP)</span>
+      <span class="skill-pill">Text Classification</span>
+      <span class="skill-pill">Sentiment Analysis</span>
+      <span class="skill-pill">TF-IDF</span>
+      <span class="skill-pill">Word Embeddings</span>
+      <span class="skill-pill">Python</span>
+      <span class="skill-pill">Java</span>
+      <span class="skill-pill">Git</span>
+      <span class="skill-pill">Docker</span>
+      <span class="skill-pill">Jenkins</span>
+      <span class="skill-pill">Google Colab</span>
+      <span class="skill-pill">LaTeX</span>
+      <span class="skill-pill">React</span>
+      <span class="skill-pill">Node.js</span>
+      <span class="skill-pill">MySQL</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="card">
+      <p><strong>Email:</strong> lokeshmanepalli69@gmail.com</p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/lokesh-manepalli-4147b928a/" target="_blank">linkedin.com/in/lokesh-manepalli-4147b928a</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/lokeshmanepalli" target="_blank">github.com/lokeshmanepalli</a></p>
+    </div>
+  </section>
+
+  <section id="references">
+    <h2 class="section-title">Mentorship & Reference</h2>
+    <div class="timeline-item">
+      <h3>Supported by World-Class Mentorship</h3>
+      <div class="timeline-meta">Dr. S. Shanmugan</div>
+      <p>
+        Stanford Top 2% Scientist | h-index: 47 | Citations: 7,000+<br>
+        Research Mentor, Research Centre for Solar Energy, KLEF
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Lokesh Manepalli | Research Portfolio | Built with GitHub Pages</p>
+  </footer>
+</body>
+</html>
