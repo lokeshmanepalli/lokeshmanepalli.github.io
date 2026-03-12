@@ -171,6 +171,18 @@
       padding: 26px;
       box-shadow: var(--shadow);
       backdrop-filter: blur(14px);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+    }
+
+    .hero-card:hover,
+    .card:hover,
+    .publication-item:hover,
+    .timeline-item:hover,
+    .photo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(34, 211, 238, 0.12), 0 18px 40px rgba(0, 0, 0, 0.24);
+      border-color: rgba(141, 220, 255, 0.28);
+      background: rgba(255, 255, 255, 0.075);
     }
 
     .hero-side {
@@ -189,6 +201,7 @@
       border: 1px solid var(--border);
       border-radius: 26px;
       box-shadow: var(--shadow);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     }
 
     .photo-placeholder {
@@ -362,34 +375,44 @@
       </div>
 
       <div class="hero-card">
-      <h4>Current Highlights</h4>
-      <ul>
-        <li>Incoming Summer Research Intern at ARCI</li>
-        <li>First-author research presented at IIT Patna Research Conference ICADCA (Dec 2025)</li>
-        <li>Working across AI for mental health, NLP, explainable AI, and renewable energy systems</li>
-        <li>Building end-to-end, systems-level research architectures for real-world impact</li>
-      </ul>
-    </div>
+        <h4>Current Highlights</h4>
+        <ul>
+          <li>Incoming Summer Research Intern at ARCI</li>
+          <li>First-author research presented at IIT Patna Research Conference ICADCA (Dec 2025)</li>
+          <li>Working across AI for mental health, NLP, explainable AI, and renewable energy systems</li>
+          <li>Building end-to-end, systems-level research architectures for real-world impact</li>
+        </ul>
+      </div>
+
+      <div class="hero-card">
+        <h4>Currently Working On</h4>
+        <ul>
+          <li>AI-based solar desalination architecture for green hydrogen systems</li>
+          <li>Interpretable fuzzy–bidirectional spam detection manuscript</li>
+          <li>Strengthening academic portfolio for ARCI and future PhD pathways</li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <section id="stats">
+    <h2 class="section-title">Achievements at a Glance</h2>
     <div class="card-grid">
+      <div class="card">
+        <h3>IIT Patna</h3>
+        <p>First-Author Presenter</p>
+      </div>
+      <div class="card">
+        <h3>ARCI</h3>
+        <p>Incoming Research Intern</p>
+      </div>
       <div class="card">
         <h3>4</h3>
         <p>Research Works</p>
       </div>
       <div class="card">
-        <h3>1</h3>
-        <p>Conference Presentation</p>
-      </div>
-      <div class="card">
-        <h3>3</h3>
-        <p>Major Projects</p>
-      </div>
-      <div class="card">
-        <h3>2</h3>
-        <p>Research Domains</p>
+        <h3>HTR</h3>
+        <p>Research Scholar Track</p>
       </div>
     </div>
   </section>
@@ -506,20 +529,20 @@
       <div class="card">
         <h3>Satellite Image Super-Resolution for Noisy Images</h3>
         <p><strong>Role:</strong> Team Lead</p>
-        <p>Led the evaluation of five GAN architectures: Vanilla GAN, DCGAN, SRGAN, ESRGAN, and CycleGAN.</p>
-        <p>Achieved a 12% PSNR improvement using ESRGAN on datasets including EuroSAT, RESISC45, and SpaceNet.</p>
+        <p><strong>Tech Focus:</strong> Vanilla GAN, DCGAN, SRGAN, ESRGAN, CycleGAN</p>
+        <p><strong>Outcome:</strong> Achieved a 12% PSNR improvement using ESRGAN on EuroSAT, RESISC45, and SpaceNet datasets.</p>
       </div>
       <div class="card">
         <h3>Full-Stack Video Streaming Platform</h3>
         <p><strong>Role:</strong> Team Lead</p>
-        <p>Built a scalable video streaming platform using React, Node.js, and MySQL.</p>
-        <p>Implemented adaptive bitrate streaming and secure authentication, optimized for low latency and reliable delivery for 30+ active users.</p>
+        <p><strong>Tech Stack:</strong> React, Node.js, MySQL</p>
+        <p><strong>Outcome:</strong> Built a scalable platform with adaptive bitrate streaming and secure authentication for 30+ active users.</p>
       </div>
       <div class="card">
         <h3>KLU Agent Chatbot (Gen-AI College Assistant)</h3>
+        <p><strong>Role:</strong> Full-Stack Developer</p>
         <p><strong>Tech Stack:</strong> Python, Flask, Anthropic Claude API, HTML, CSS, JavaScript</p>
-        <p>Developed a full-stack, 24/7 AI-powered college assistant to automate student inquiries related to academics, tuition fees, bus routes, and campus logistics.</p>
-        <p>Implemented multi-turn conversational memory to maintain context across complex student queries and reduce manual administrative support.</p>
+        <p><strong>Outcome:</strong> Created a 24/7 AI-powered college assistant with multi-turn memory for student support and campus queries.</p>
       </div>
     </div>
   </section>
@@ -591,10 +614,19 @@
 
   <section id="contact">
     <h2 class="section-title">Contact</h2>
-    <div class="card">
-      <p><strong>Email:</strong> lokeshmanepalli69@gmail.com</p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/lokesh-manepalli-4147b928a/" target="_blank">linkedin.com/in/lokesh-manepalli-4147b928a</a></p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/lokeshmanepalli" target="_blank">github.com/lokeshmanepalli</a></p>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Email</h3>
+        <p><a href="mailto:lokeshmanepalli69@gmail.com">lokeshmanepalli69@gmail.com</a></p>
+      </div>
+      <div class="card">
+        <h3>LinkedIn</h3>
+        <p><a href="https://www.linkedin.com/in/lokesh-manepalli-4147b928a/" target="_blank">Connect on LinkedIn</a></p>
+      </div>
+      <div class="card">
+        <h3>GitHub</h3>
+        <p><a href="https://github.com/lokeshmanepalli" target="_blank">View GitHub Profile</a></p>
+      </div>
     </div>
   </section>
 
