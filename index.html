@@ -370,7 +370,7 @@
   <section class="hero">
     <div class="hero-text">
       <h2>Hi, I’m Lokesh Manepalli</h2>
-      <h3>Undergraduate AI Researcher | Deep Learning | NLP | Renewable Energy Systems</h3>
+      <h3>Undergraduate Student | AI Researcher | Deep Learning | NLP | Renewable Energy Systems</h3>
       <p>
         Developing intelligent, systems-level AI solutions to solve real-world challenges in human-centered computing and sustainable energy. Incoming Research Intern at ARCI and First-Author presented at IIT Patna.
       </p>
@@ -414,7 +414,7 @@
       </div>
       <div class="card">
         <h3>HTR</h3>
-        <p>Honours Through Research</p>
+        <p>Honours Through Research Program</p>
       </div>
     </div>
   </section>
@@ -426,7 +426,7 @@
         I am an undergraduate researcher in the Honors Through Research (HTR) Program at Koneru Lakshmaiah Education Foundation (KLEF), specializing in Artificial Intelligence for Computational Intelligence.
       </p>
       <p>
-        My research philosophy is driven by a systems-level approach: I do not just train algorithms; I build end-to-end architectures that solve complex, real-world problems. Currently, my work spans two critical domains: Human-Computer Interaction (Mental Health) and the Water-Energy Nexus (Renewable Energy).
+        My research philosophy is driven by a systems-level approach: I do not just train algorithms, I build end-to-end architectures that solve complex, real-world problems. Currently, my work spans two critical domains: Human-Computer Interaction (Mental Health) and the Water-Energy Nexus (Renewable Energy).
       </p>
       <p>
         I am currently working under the mentorship of Dr. S. Shanmugan and am preparing to join the International Advanced Research Centre for Powder Metallurgy and New Materials (ARCI) as a Summer Research Intern. After completing my B.Tech, I intend to pursue a Fast-Track PhD in Germany to continue my work on AI-driven sustainable infrastructures.
@@ -533,6 +533,28 @@
         <p><strong>Role:</strong> Team Lead</p>
         <p><strong>Tech Focus:</strong> Vanilla GAN, DCGAN, SRGAN, ESRGAN, CycleGAN</p>
         <p><strong>Outcome:</strong> Achieved a 12% PSNR improvement using ESRGAN on EuroSAT, RESISC45, and SpaceNet datasets.</p>
+        <details id="satellite-details" style="margin-top: 18px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; padding: 18px 18px 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.12); overflow: hidden;">
+          <summary id="satellite-toggle" style="cursor: pointer; color: #8ddcff; font-weight: 700; font-size: 1rem; list-style: none;">View More Details</summary>
+          <div style="margin-top: 18px; text-align: center;">
+            <a href="./satellite-super-resolution.png" target="_blank" style="display: inline-block; text-decoration: none;">
+              <img src="./satellite-super-resolution.png" alt="Satellite Image Super-Resolution project result" style="width: 100%; max-width: 620px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 14px 28px rgba(0,0,0,0.2);" />
+            </a>
+            <p style="margin-top: 10px; font-size: 0.94rem; color: var(--muted);">Click the image to enlarge.</p>
+          </div>
+        </details>
+        <script>
+          (function () {
+            const details = document.getElementById('satellite-details');
+            const summary = document.getElementById('satellite-toggle');
+            if (details && summary) {
+              const updateLabel = () => {
+                summary.textContent = details.open ? 'Hide Details' : 'View More Details';
+              };
+              updateLabel();
+              details.addEventListener('toggle', updateLabel);
+            }
+          })();
+        </script>
       </div>
       <div class="card">
         <h3>Full-Stack Video Streaming Platform</h3>
